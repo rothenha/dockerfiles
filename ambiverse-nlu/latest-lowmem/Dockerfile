@@ -6,7 +6,7 @@ ENV AIDA_CONF=default
 
 WORKDIR /ambiverse-nlu
 
-RUN git clone https://github.com/ambiverse-nlu/ambiverse-nlu.git /ambiverse-nlu
+RUN git clone https://github.com/rothenha/ambiverse-nlu.git /ambiverse-nlu
 
 RUN sed -i '/^log4j.appender.FILE.File=.*/c\log4j.appender.FILE.File=/ambiverse-nlu/logs/ambiverse-nlu.log' /ambiverse-nlu/src/main/resources/log4j.properties
 
