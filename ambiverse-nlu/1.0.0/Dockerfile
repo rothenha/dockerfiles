@@ -10,6 +10,10 @@ RUN java -version
 
 WORKDIR /ambiverse-nlu
 
+# 32bit compatibility layer needed for hunpos binaries
+RUN apt-get update
+RUN apt-get install lib32z1
+
 RUN git clone --branch ${TAG} https://github.com/rothenha/ambiverse-nlu.git /ambiverse-nlu
 
 RUN sed -i '/^log4j.appender.FILE.File=.*/c\log4j.appender.FILE.File=/ambiverse-nlu/logs/ambiverse-nlu.log' /ambiverse-nlu/src/main/resources/log4j.properties
