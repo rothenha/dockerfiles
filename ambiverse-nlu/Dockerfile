@@ -8,7 +8,7 @@ WORKDIR /ambiverse-nlu
 
 # 32bit compatibility layer needed for hunpos binaries
 RUN apt-get update
-RUN apt-get install lib32z1
+RUN apt-get install -y lib32z1
 
 RUN git clone https://github.com/rothenha/ambiverse-nlu.git /ambiverse-nlu
 
